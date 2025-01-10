@@ -1,5 +1,5 @@
-import { AppProps } from 'next/app';
+import Dashboard from './Dashborad';
 
-export default function Home({ Component, pageProps }: AppProps) {
-  return <div></div>;
+export default function Home() {
+  return <Dashboard />;
 }
