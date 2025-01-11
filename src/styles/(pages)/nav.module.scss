@@ -1,0 +1,48 @@
+@use '@/styles/variable' as variable;
+
+.navWrapper {
+  width: 100%;
+  border: 1px solid variable.$borderColor;
+
+  .navBox {
+    width: 1200px;
+    margin: 0 auto;
+    ul {
+      height: 100%;
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      font-weight: bold;
+      margin: 0px;
+      padding-left: 15px;
+      align-items: center;
+
+      li {
+        cursor: pointer;
+        &.active {
+          color: variable.$focusColor;
+
+          div {
+            padding: 10px 0px;
+            text-align: center;
+          }
+
+          &::after {
+            background-color: variable.$focusColor;
+          }
+        }
+
+        &::after {
+          display: block;
+          content: ' ';
+          width: 22px;
+          height: 2px;
+        }
+
+        &:hover {
+          color: variable.$focusColor;
+        }
+      }
+    }
+  }
+}

@@ -1,92 +1,98 @@
+@use '@/styles/variable' as variable;
+
 .container {
   margin: 20px 0;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
 
-  .logo {
-    width: 130px;
-    height: 53px;
-    background: url('/media/logo.jpg');
-    background-size: cover;
-    content: ' ';
-  }
+  .headerWrapper {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
 
-  .topMenu {
-    width: 350px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    ul {
-      display: flex;
-      gap: 30px;
-      li {
-        display: inline-block;
-        cursor: pointer;
+    .logo {
+      width: 130px;
+      height: 53px;
+      background: url('/media/logo.jpg');
+      background-size: cover;
+      content: ' ';
+    }
 
-        &:hover {
-          color: #35c5f0;
+    .topMenu {
+      width: 350px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      ul {
+        display: flex;
+        gap: 30px;
+        li {
+          display: inline-block;
+          cursor: pointer;
+
+          &:hover {
+            color: variable.$focusColor;
+          }
         }
       }
     }
-  }
 
-  .searchWrapper {
-    align-content: center;
-
-    .searchBox {
-      width: 250px;
-      height: 35px;
-      border: 1px solid #e6e6e6;
-      border-radius: 5px;
+    .searchWrapper {
       align-content: center;
+
+      .searchBox {
+        width: 250px;
+        height: 35px;
+        border: 1px solid variable.$borderColor;
+        border-radius: 5px;
+        align-content: center;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+        gap: 5px;
+
+        .searchLogo {
+          width: 25px;
+          height: 25px;
+          content: ' ';
+          background: url('/media/search.svg');
+          background-size: cover;
+        }
+
+        .search {
+          width: 90%;
+          height: 90%;
+          border: 0px;
+
+          &:focus {
+            outline: none; // 기본 브라우저의 포커스 아웃라인 제거
+          }
+        }
+      }
+    }
+
+    .info {
       display: flex;
       align-items: center;
-      padding: 0px 10px;
-      gap: 5px;
+      ul {
+        font-size: 0.9rem;
+        color: variable.$fontColorSub;
+        padding: 0px 20px;
+        display: flex;
+        gap: 5px;
+        li {
+          padding: 0px 12px;
+          display: inline-block;
+          border-right: 1px solid variable.$navBorderColor;
+          box-sizing: border-box;
 
-      .searchLogo {
-        width: 25px;
-        height: 25px;
-        content: ' ';
-        background: url('/media/search.svg');
-        background-size: cover;
-      }
-
-      .search {
-        width: 90%;
-        height: 90%;
-        border: 0px;
-
-        &:focus {
-          outline: none; // 기본 브라우저의 포커스 아웃라인 제거
+          &:nth-last-child(1) {
+            border-right: 0px;
+          }
         }
       }
-    }
-  }
 
-  .info {
-    display: flex;
-    align-items: center;
-    ul {
-      font-size: 0.9rem;
-      color: #2f3438;
-      padding: 0px 20px;
-      display: flex;
-      gap: 5px;
-      li {
-        padding: 0px 12px;
+      span {
         display: inline-block;
-        border-right: 1px solid #e6e6e6;
-        box-sizing: border-box;
-
-        &:nth-last-child(1) {
-          border-right: 0px;
-        }
       }
-    }
-
-    span {
-      display: inline-block;
     }
   }
 }

@@ -1,6 +1,7 @@
 import '@/styles/globals.scss';
 
 import Header from './Header';
+import Nav from './Nav';
 
 export default function DashboardLayout({
   children,
@@ -11,6 +12,7 @@ export default function DashboardLayout({
     <html lang="en">
       <body>
         <Header />
+        <Nav />
         <main>{children}</main>
       </body>
     </html>
