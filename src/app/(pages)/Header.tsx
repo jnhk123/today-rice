@@ -1,6 +1,12 @@
+'use client';
 import styles from '@/styles/(pages)/header.module.scss';
 
 export default function Header() {
+
+  const test = (e) => {
+    console.log("=> Keyword: ", e.target.value);
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.headerWrapper}>
@@ -19,6 +25,7 @@ export default function Header() {
               type="text"
               className={styles.search}
               placeholder="통합검색"
+              onChange={test}
             />
           </div>
         </div>
